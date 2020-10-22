@@ -1,0 +1,26 @@
+--Запрос 1--
+select count(result) from exam_results;
+--Запрос 2--
+select avg(result) from exam_results;
+--Запрос 3--
+select * from exam_results where
+result IN (select MAX(result) from exam_results)
+OR result IN (select MIN(result) from exam_results)
+--Запрос 4--
+select is_citizen, AVG(result) from exam_results
+group by is_citizen
+--Запрос 5--
+select EXTRACT(YEAR from birthday) as year, MIN(result), AVG(result), MAX(result) from exam_results
+group by year
+--Запрос 6--
+select result from exam_results where
+fullname like 'Олег%' OR
+length(fullname) > 20
+order by birthday DESC
+--Запрос 7--
+select * from exam_results where
+result > (select AVG(result) from exam_results)
+--Запрос 8--
+select * from exam_results
+order by result DESC
+limit 3
