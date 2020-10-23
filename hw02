@@ -1,0 +1,68 @@
+CREATE TABLE "public"."catproject" (
+    "id" SERIAL,
+    "name" TEXT NOT NULL,
+	"birthday" DATE NOT NULL,
+	"sex" TEXT NOT NULL,
+	"photo" TEXT NOT NULL,
+	"discription" TEXT NOT NULL,
+    "phone" TEXT NOT NULL,
+    PRIMARY KEY ("id")
+);
+
+INSERT INTO "public"."catproject" (
+	"name",
+	"birthday",
+	"sex",
+	"photo",
+	"discription",
+  "phone"
+	)
+VALUES
+  ('Вася','1989-01-08'::date, 'мальчик', 'https://kotdema.ru/thumb/2/c44-I9k5TBatfEQNMHKgeQ/580r450/d/0368_31.jpg', 'добрый', '89999999999'),
+  ('Коля','2020-05-28'::date, 'мальчик', 'https://sever-press.ru/wp-content/uploads/2020/04/07042020_коты.jpg', 'рыжий', '89999999998'),
+  ('Петя','2005-04-23'::date, 'мальчик', 'https://ont.by/static/article/big/index/PXYrhbCnpejqmNVF.jpg', 'белый', '89999999997'),
+  ('Толя','2001-02-07'::date, 'мальчик', 'https://ichef.bbci.co.uk/news/640/cpsprodpb/4862/production/_102703581_cats5istock.jpg', 'вредный', '89999999996'),
+  ('Кеша','1999-08-09'::date, 'мальчик', 'https://cdn24.img.ria.ru/images/155231/05/1552310590_0:405:2048:1557_600x0_80_0_0_880832a40040dfcb928722ae168cc719.jpg', 'черепаховый окрас', '89999999995'),
+  ('Мурка','2018-03-08'::date, 'девочка', 'https://i.pinimg.com/originals/f0/95/c5/f095c5d902769b41302b34b4a3c7dc0d.jpg', 'аллергия на молоко', '89999999994'),
+  ('Люси','2018-10-06'::date, 'девочка', 'https://ont.by/static/article/big/index/h88pNJZxRvO4a2a3.jpg', 'привит', '89999999993'),
+  ('Дуся','1999-09-24'::date, 'девочка', 'https://izhlife.ru/uploads/posts/newsimg/imgs-1553246030.jpg', 'ласковая', '89999999992'),
+  ('Машка','2020-11-09'::date, 'девочка', 'https://milota.online/storage/posts/October2018/QchqT1CRM9AKlTOt3NdW.jpg', 'коричневый окрас', '89999999991'),
+  ('Туся','1989-02-08'::date, 'девочка', 'https://funik.ru/wp-content/uploads/2018/12/75c255685547f880d166-700x607.jpeg', 'голубые глаза', '89999999990');
+
+--select 7
+select * from catproject where
+sex like 'мальчик';
+select * from catproject where
+sex like 'девочка';
+  
+--select 8
+select * from catproject where
+photo like '*jpg';
+  
+--select 9
+update catproject set birthday = '2001-02-08' where id = 4;
+  
+--select 10
+delete from catproject where id = 5;
+  
+--select 11
+INSERT INTO "public"."catproject" (
+	"name",
+	"birthday",
+	"sex",
+	"photo",
+	"discription",
+  "phone"
+	)
+VALUES
+  ('Гоша','2019-11-08'::date, 'мальчик', 'https://hvost.news/upload/resize_cache/iblock/c4e/750_400_1/kot_krichit_po_nocham_chto_delat.jpg', 'игривый', '89999999989');
+  
+--select 12
+alter table catproject add column "chip" text;
+alter table catproject alter column chip SET DEFAULT 'NF';
+ 
+--select 13
+update catproject set chip = '00000A' where id = 3;
+update catproject set chip = '00000B' where id = 2;
+ 
+  
