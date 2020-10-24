@@ -50,7 +50,7 @@ sex like 'девочка';
   
 --select 8
 select * from cats where
-photo like '%.jpg';
+photo like '%.jpg' or photo like '%.jpeg';
   
 --select 9
 update cats set birthday = '2001-02-08' where id = 4;
