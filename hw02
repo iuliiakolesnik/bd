@@ -1,4 +1,15 @@
-CREATE TABLE "public"."catproject" (
+--Select 1
+create role catperson with superuser 
+
+--Select 2
+create DATABASE catproject
+
+--select 3
+ALTER DATABASE catproject OWNER TO catperson
+
+
+--Select 4,5
+CREATE TABLE "public"."cats" (
     "id" SERIAL,
     "name" TEXT NOT NULL,
 	"birthday" DATE NOT NULL,
@@ -9,7 +20,9 @@ CREATE TABLE "public"."catproject" (
     PRIMARY KEY ("id")
 );
 
-INSERT INTO "public"."catproject" (
+--select 6
+
+INSERT INTO "public"."cats" (
 	"name",
 	"birthday",
 	"sex",
