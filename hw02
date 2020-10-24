@@ -43,23 +43,23 @@ VALUES
   ('Туся','1989-02-08'::date, 'девочка', 'https://funik.ru/wp-content/uploads/2018/12/75c255685547f880d166-700x607.jpeg', 'голубые глаза', '89999999990');
 
 --select 7
-select * from catproject where
+select * from cats where
 sex like 'мальчик';
-select * from catproject where
+select * from cats where
 sex like 'девочка';
   
 --select 8
-select * from catproject where
-photo like '*jpg';
+select * from cats where
+photo like '%.jpg';
   
 --select 9
-update catproject set birthday = '2001-02-08' where id = 4;
+update cats set birthday = '2001-02-08' where id = 4;
   
 --select 10
-delete from catproject where id = 5;
+delete from cats where id = 5;
   
 --select 11
-INSERT INTO "public"."catproject" (
+INSERT INTO "public"."cats" (
 	"name",
 	"birthday",
 	"sex",
@@ -71,11 +71,8 @@ VALUES
   ('Гоша','2019-11-08'::date, 'мальчик', 'https://hvost.news/upload/resize_cache/iblock/c4e/750_400_1/kot_krichit_po_nocham_chto_delat.jpg', 'игривый', '89999999989');
   
 --select 12
-alter table catproject add column "chip" text;
-alter table catproject alter column chip SET DEFAULT 'NF';
+alter table cats add column "chip" text DEFAULT 'NF';
  
 --select 13
-update catproject set chip = '00000A' where id = 3;
-update catproject set chip = '00000B' where id = 2;
- 
-  
+update cats set chip = '00000A' where id = 3;
+update cats set chip = '00000B' where id = 2;
